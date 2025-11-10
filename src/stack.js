@@ -12,20 +12,25 @@ const { NotImplementedError } = require('../lib/errors');
  * stack.pop(); // undefined
  *
  */
+
 class Stack {
-  push(/* value */) {
-    // Remove line below and write your code here
-    throw new NotImplementedError('Not implemented');
+  constructor() {
+    this.items = [];
+  }
+
+  push(value) {
+    this.items[this.items.length] = value;
   }
 
   pop() {
-    // Remove line below and write your code here
-    throw new NotImplementedError('Not implemented');
+    if (this.items.length === 0) return undefined;
+    const value = this.items[this.items.length - 1];
+    this.items.length = this.items.length - 1;
+    return value;
   }
 
   peek() {
-    // Remove line below and write your code here
-    throw new NotImplementedError('Not implemented');
+    return this.items[this.items.length - 1];
   }
 }
 
